@@ -27,19 +27,26 @@ Eine Watch App soll den Stundenplan des Tages über das Smartphone von WebUntis 
 
 ## Projektstart
 
-November
+Noch keine Termine
 
 ## Projektende
 
-März
+Noch keine Termine
 
 ## Projektressourcen
 
 | Benötigte Ressourcen     | Menge | Betrag          |
 |:-------------------------|:-----:| ---------------:|
-| Personal                 | 2     |€0               |
+| Personal                 | 2     | €0               |
 | Samsung Smartwatch       | 1     | ca. €329        |
 | Android Smartphone       | 1     | ca. €200 - €900 |
+
+## Meilensteine
+
+* Funktionierende Watch und Smartphone App.
+* Kommunikation zwischen Smartwatch und Smartphone
+* Verbindung zu Web Untis funktioniert
+* Stundenplan wird korrekt auf Smartwatch dargestellt
 
 ## Projektrisiken
 
