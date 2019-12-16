@@ -1,0 +1,73 @@
+= Pflichtenheft Fragebogen
+// Metadata
+:author: Jan Kaufmann
+:email: j.kaufmann@students.htl-leonding.ac.at
+:date: 2019-12-15
+:revision:  1.0
+// Settings
+:source-highlighter: coderay
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+// Refs:
+:imagesdir: images
+:sourcedir-code: src/main/java/at/htl/jdbcprimer
+:sourcedir-test: src/test/java/at/htl/jdbcprimer
+:num_tests: ca. 20
+:num_questions: ca. 100
+:toc:
+
+Version: {revision}
+
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+++++
+
+== Ausgangszustand
+Eine Informatik HTL im Großraum Linz mit ca. 1000 SchülerInnen führt pro Schuljahr {num_tests} Aufnahmeprüfungen durch.
+
+== Istzustand
+Die Aufnahmeprüfungen werden mit einem Papierfragebogen durchgeführt.
+
+== Aufgabenstellung
+Die Leitung der HTL möchte das die Prüfungen mit einem Java-Programm am Computer durchgeführt werden können.
+[plantuml,, svg]
+....
+@startuml
+Mitarbeiter "1" -> "*" Frage: erstellt
+Frage "*" -down> "1" Fragebogen: kommt in
+Fragebogen "1" -down> "1" Befragter:Füllt aus
+@enduml
+....
+    
+[plantuml,, png]
+....
+@startuml
+|Ersteller|
+start
+:Fragebogen erstellen;
+:Fragebogen in Datenbank eintragen;
+|Befragter|
+:Fragebogen öffnen;
+:Fragebogen beantworten;
+:Antworten zurückschicken;
+stop
+@enduml
+....
+
+== Zielstetzung
+Ziel ist die Einsparung von Kosten durch Vermeidung von Drucken. Einsparung bei Papier und Druckertinte.
+
+== Funktionale Anforderungen
+* Erstellen eines Fragebogen
+* Durchführen einer Befragen mit erstelltem Fragebogen
+* Ergebnis darstellen und in eine Datenbank speichern
+* Automatische Auswertung
+
+== Nicht-funktionale Anfroderungen
+* Zuverlässigkeit
+* Effizienz
+* Ansprechendes UI
+
+== Mengengerüst
+Da die Aufnahmeprüfungen im Juli stattfinden werden sich um diesen Zeitpunkt die Zugriffe konzentrieren.
+Da mit {num_questions} Fragen gerechnet werden kann, könnte das bei {num_tests} Bewerbern zu kurzen stoßartigen Belastung des Systems, bei Abgabe der Fragebögen führen.
