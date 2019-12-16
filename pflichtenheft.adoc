@@ -30,12 +30,16 @@ Die Aufnahmeprüfungen werden mit einem Papierfragebogen durchgeführt.
 
 == Aufgabenstellung
 Die Leitung der HTL möchte das die Prüfungen mit einem Java-Programm am Computer durchgeführt werden können.
+
+=== Domain Object Model (DOM) +
+Fachereichsobjekte Modell
+
 [plantuml,, svg]
 ....
 @startuml
-Mitarbeiter "1" -> "*" Frage: erstellt
-Frage "*" -down> "1" Fragebogen: kommt in
-Fragebogen "1" -down> "1" Befragter:Füllt aus
+Mitarbeiter "1" -> "*" Frage: erstellt >
+Frage "*" -left-o "1" Fragebogen: besteht aus <
+Fragebogen "1" -down> "1" Befragter:füllt aus
 @enduml
 ....
     
@@ -53,6 +57,22 @@ start
 stop
 @enduml
 ....
+
+[plantuml,xxx,png]
+----
+@startuml
+left to right direction
+:Admin:
+:User:
+rectangle Fragebogen-Creator {
+(Fragebogen erstellen)
+(Fragebogen ausfüllen)
+(Umfrage auswerten)
+Admin -- (Fragebogen erstellen)
+}
+
+@enduml
+----
 
 == Zielstetzung
 Ziel ist die Einsparung von Kosten durch Vermeidung von Drucken. Einsparung bei Papier und Druckertinte.
